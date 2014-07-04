@@ -15,30 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.caris.oscarexchange4j.theme.interfaces;
+package com.caris.oscarexchange4j.theme.services;
 
-/*
- * WEB-999 - Interface added to define methods for icons associated to layers.
- */
-
-/**
- * @author tcoburn
- * 
- */
-public interface Iconified {
-    /**
-     * This method will return the image associated with this layer.
-     * 
-     * @return String - The image associated with this layer.
-     */
-    public abstract String getIcon();
+public class CatalogueService extends I_Service {
 
     /**
-     * This method will set hte image associated with this layer.
-     * 
-     * @param icon
-     *            - Sets the image associated with this layer.
+     * The attribute name for the output schema
      */
-    public abstract void setIcon(String icon);
+    public final static String OUTPUT_SCHEMA = "outputSchema";
+
+    /**
+     * The attribute value for the default output schema.
+     */
+    public final static String DEFAULT_OUTPUT_SCHEMA = "http://www.opengis.net/cat/csw/2.0.2";
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.caris.oscarexchange4j.theme.services.I_Service#getServiceType()
+     */
+    @Override
+    public ServiceType getServiceType() {
+        return Service.ServiceType.CATALOGUE;
+    }
 
 }
